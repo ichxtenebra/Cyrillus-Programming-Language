@@ -6,14 +6,11 @@ include 'messages.inc'
 segment readable executable
 
 _start:
-    push 1
-    pop rdi
+    mov eax, 1
+    mov edi, eax
     lea rsi, [Cyrillus_banner]
     mov edx, Cyrillus_banner_len
-    push 1
-    pop rax
     syscall
-    
-    xor edi, edi
     mov eax, 60
+    xor edi, edi
     syscall
